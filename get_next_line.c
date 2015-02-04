@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 14:33:27 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/02/04 15:38:31 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/04 16:47:02 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 int get_next_line(int const fd, char **line)
 {
-	static char	ret[BUFF_SIZE] = 0;
-	static char	buf[BUFF_SIZE];
+	int			ret;
+	static char	buf[BUFF_SIZE + 1];
+	static char	res[BUFF_SIZE] = 0;
 
 	if (fd < 0)
 		return (-1);
-	if (ft_strcmp(ret) == '\0')
-	{
-		*line = 
-	}
-	while (ret = read(ret, buf, BUFF_SIZE))
+	while (ret = read(fd, buf, BUFF_SIZE))
 	{
 		buf[ret] = '\0';
-		ft_putendl(but);
+		if (ft_strchr(buf, '\n'))
+			ft
+		ft_putendl(buf);
+		if (ft_strcmp(ret, "\0"))
+			*line = ft_strjoin(ret, buf);
 	}
 	return (0);
 }
