@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/26 11:19:53 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/02/10 10:59:25 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/02/09 14:11:51 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/02/10 10:54:19 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strndup(const char *s, size_t n)
 {
-	free(*as);
-	*as = NULL;
+	char	*str;
+
+	str = ft_memalloc(n + 1);
+	if (str)
+	{
+		ft_memcpy(str, s, n);
+		*(str + n) = 0;
+	}
+	return (str);
 }

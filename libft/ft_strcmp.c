@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 13:15:29 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/23 15:04:50 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:51:30 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	return (ft_strncmp(s1, s2, ft_strlen(s1)));
+	return (ft_strncmp(s1, s2, ft_strlen(s1) + 1));
 }

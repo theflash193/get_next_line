@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 14:31:02 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/22 14:45:22 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:55:15 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char *ret;
+	char	*ret;
 	size_t	l;
 
 	l = ft_strlen(s1);
-	if(!(ret = (char *)malloc(sizeof(s1) * (l + 1))))
+	if (!(ret = (char *)malloc(sizeof(char) * (l + 1))))
 		return (NULL);
-	ft_memcpy(ret, s1, l);
+	ft_memcpy((void *)ret, s1, l);
 	ret[l] = '\0';
 	return (ret);
 }

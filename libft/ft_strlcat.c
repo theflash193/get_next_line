@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/28 16:29:41 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 16:47:27 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:58:38 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	if (i > size)
 		return (size + ft_strlen(src));
 	j = 0;
-	while (i + j < size -1 && src[j])
+	while (i + j < size - 1 && src[j])
 	{
 		dst[i + j] = src[j];
 		j++;

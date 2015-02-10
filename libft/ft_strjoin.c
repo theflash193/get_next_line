@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 11:29:22 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/26 13:46:23 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:54:39 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ret;
 
-	if (!(ret = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
+	if (!s1 || !s2 || !(ret = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
 		return (NULL);
-	while (s1++)
-	{
-		*ret = *s1;
-		ret++;
-	}
-	while (s2++)
-	{
-		*ret = *s2;
-		ret++;
-	}
-	return (ret);	
+	ft_strcpy(ret, s1);
+	ft_strcat(ret, s2);
+	return (ret);
 }

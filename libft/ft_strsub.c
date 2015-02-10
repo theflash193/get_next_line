@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 11:29:12 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 17:02:02 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:52:26 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,4 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		s++;
 	}
 	return (ret);
-}	
+}

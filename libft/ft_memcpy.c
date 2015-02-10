@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 13:30:02 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 16:12:57 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:47:23 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-	char	*tmp_src;
-	char	*tmp_dst;
+	unsigned char	*tmp_src;
+	unsigned char	*tmp_dst;
 
-	tmp_src = (char *) src;
-	tmp_dst = (char *) dst;
+	tmp_src = (unsigned char *)src;
+	tmp_dst = (unsigned char *)dst;
 	while (len--)
 	{
-		*tmp_src = *tmp_dst;
+		*tmp_dst = *tmp_src;
 		tmp_src++;
 		tmp_dst++;
 	}

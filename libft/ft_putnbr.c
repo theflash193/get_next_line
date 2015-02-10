@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/07 17:11:56 by grass-kw          #+#    #+#             */
-/*   Updated: 2013/12/31 13:20:32 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/09 14:29:20 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,5 @@
 
 void	ft_putnbr(int n)
 {
-	if (n < 0)
-	{
-		n *= -1;
-		ft_putchar('-');
-	}
-	if (n >= 0 && n <= 9)
-		ft_putchar(n + 48);
-	if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar((n % 10) + 48);
-	}
+	ft_putnbr_fd(n, 1);
 }

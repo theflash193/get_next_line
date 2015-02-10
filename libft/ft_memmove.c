@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 13:45:41 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 16:15:50 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:49:16 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char 	*d;
-	unsigned char 	*s;
-	unsigned char 	tmp[n];
+	unsigned char	*d;
+	unsigned char	*s;
+	unsigned char	tmp[n];
 	int				i;
 
 	i = -1;

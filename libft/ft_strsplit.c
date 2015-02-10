@@ -6,57 +6,81 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 11:29:49 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 17:04:40 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:53:31 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	   ft_count(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
-	int i;
-	int j;
-	int count;
+	int		i;
+	int		m;
 
 	i = 0;
-	count = 0;
+	m = 0;
 	while (s[i])
 	{
-		while (s[i] == c && s[i])
+		if (s[i] != c)
+		{
+			m++;
+			while (s[i] != c && s[i])
+				i++;
+		}
+		if (s[i] == c)
 			i++;
-		j = i;
-		while (s[i] != c && s[i])
-			i++;
-		if (i != j)
-			count++;
 	}
-	return (count);
-}                                                                                                                                                                                                                                                                                                                                                                                                      
+	return (m);
+}
 
-char			**ft_strsplit(char const *s, char c)
+static char	**ft_create_tab(char **split, char const *s, char c, int m)
 {
-	char	**tab;
-	int		i;
-	int		j;
-	int 	start;
+	int				i;
+	int				j;
+	int				k;
+	unsigned int	start;
 
 	i = 0;
 	j = 0;
-	if (!(tab = (char **) ft_memalloc(ft_count(s, c) + 1)))
-		return (NULL);
-	while (s[i])
+	while (s[i] && m > 0)
 	{
-		while (s[i] == c && s[i])
+		k = 0;
+		while (s[i] == c)
 			i++;
 		start = i;
 		while (s[i] != c && s[i])
-			i++;
-		if (i != start)
 		{
-			tab[j] = ft_strsub(s, start, i - start);
-			j++;
+			i++;
+			k++;
 		}
+		split[j] = ft_strsub(s, start, k);
+		j++;
+		m--;
 	}
-	tab[j] = 0;
-	return (tab);
+	split[j] = '\0';
+	return (split);
+}
+
+char		**ft_strsplit(char const *s, char c)
+{
+	int		m;
+	char	**split;
+
+	if (!s)
+		return (NULL);
+	else if (s[0] == '\0')
+	{
+		if ((split = (char **)ft_memalloc(sizeof(char *))) == NULL)
+			return (NULL);
+		split[0] = NULL;
+		return (split);
+	}
+	else
+	{
+		m = ft_count_words(s, c);
+		if ((split = (char **)ft_memalloc((sizeof(char *) * (m + 1)))) == NULL)
+			return (NULL);
+		split = ft_create_tab(split, s, c, m);
+		return (split);
+	}
 }

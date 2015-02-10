@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/26 11:19:53 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/02/10 10:59:25 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/01/26 16:40:24 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/02/10 10:42:40 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_free_split(char **arg)
 {
-	free(*as);
-	*as = NULL;
+	int	i;
+
+	i = 0;
+	if (!arg)
+		return ;
+	while (arg[i])
+	{
+		free(arg[i]);
+		i++;
+	}
+	free(arg);
 }

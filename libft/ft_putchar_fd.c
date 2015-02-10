@@ -6,9 +6,10 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/23 11:01:02 by grass-kw          #+#    #+#             */
-/*   Updated: 2014/01/23 11:03:40 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:50:09 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)

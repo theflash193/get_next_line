@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 13:41:18 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/23 14:16:28 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:53:20 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int		ft_tolower(int c)
 {
 	if (ft_islower(c))
-		return (c - 32);
-	return c;
+		return (c + 32);
+	return (c);
 }

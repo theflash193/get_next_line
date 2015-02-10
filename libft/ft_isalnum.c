@@ -6,13 +6,13 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 13:40:53 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/23 13:52:29 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:43:45 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+int		ft_isalnum(int c)
 {
 	if (ft_isupper(c) || ft_islower(c) || ft_isdigit(c))
 		return (1);

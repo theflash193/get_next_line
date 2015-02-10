@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 14:55:07 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 16:09:55 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:56:53 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,15 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	size_t	l;
-	int		diff;
+	char	*tmp;
 
-	l = ft_strlen(src);
-	if (l > n)
+	tmp = dst;
+	ft_bzero((void *)tmp, ft_strlen(tmp));
+	while (n--)
 	{
-		diff = l - n;
-		while (n--)
-		{
-			*dst = *src;
-			src++;
-			dst++;
-		}
-		while (diff--)
-		{
-			*dst = '\0';
-			dst++;
-		}
-		return (dst);
+		*tmp = *src;
+		src++;
+		tmp++;
 	}
 	return (dst);
 }

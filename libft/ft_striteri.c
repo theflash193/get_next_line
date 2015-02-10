@@ -6,16 +6,15 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 11:27:36 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 16:59:31 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:55:50 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	i;
-	while (s++)
-	{
-		(*f)(i , s + i);
-		i++;
-	}
+
+	i = 0;
+	while (*s)
+		(*f)(i++, s++);
 }

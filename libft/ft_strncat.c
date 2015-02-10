@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 11:55:06 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 16:48:10 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:58:48 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int l;
+	char	*tmp;
+	int		i;
 
-	l = ft_strlen(s1) + 1;
-	while (*s2++ && n--)
+	tmp = s1;
+	i = 0;
+	while (tmp[i])
+		i++;
+	while (n--)
 	{
-		*(s1 + l) = *s2;
-		l++;
+		tmp[i] = *s2;
+		i++;
+		s2++;
 	}
-	*(s1 + l) = '\0';
+	tmp[i] = '\0';
 	return (s1);
 }

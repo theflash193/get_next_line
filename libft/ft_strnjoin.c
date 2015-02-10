@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/26 11:19:53 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/02/10 10:59:25 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/02/10 14:19:54 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/02/10 14:33:29 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strnjoin(char const *s1, char const *s2, size_t n)
 {
-	free(*as);
-	*as = NULL;
+	char	*ret;
+
+	if (!s1 || !s2 || !(ret = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
+		return (NULL);
+	ft_strncpy(ret, s1, n);
+	ft_strncat(ret, s2, n);
+	return (ret);
 }

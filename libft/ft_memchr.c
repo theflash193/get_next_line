@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 14:16:18 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 16:17:30 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:47:42 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*tmp;
+	const unsigned char	*tmp;
 
-	tmp = (char *)s;
+	tmp = (const unsigned char *)s;
 	while (n--)
 	{
-		if (*tmp == c)
-			return (tmp);
+		if (*tmp == (unsigned char)c)
+			return ((void *)tmp);
 		tmp++;
 	}
 	return (NULL);

@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/26 11:19:53 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/02/10 10:59:25 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/02/05 13:41:07 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/02/10 10:46:00 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	free(*as);
-	*as = NULL;
+	t_list	*tmp;
+
+	tmp = *alst;
+	if (!tmp)
+		*alst = new;
+	else
+	{
+		new->next = tmp;
+		*alst = new;
+	}
 }

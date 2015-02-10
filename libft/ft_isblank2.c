@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 11:01:50 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/26 11:03:50 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:44:11 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isblank2(int c)
 {
-	if (ft_isblank(c) || c == 'n')
+	if (ft_isblank(c) || c == '\n')
 		return (1);
 	return (0);
 }

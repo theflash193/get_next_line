@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 11:14:07 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/26 13:11:19 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 10:56:33 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ char	*ft_strnew(size_t size)
 {
 	char	*ret;
 
-	if (!(ret = (char *) ft_memalloc(size + 1)))
+	if (!(ret = (char *)ft_memalloc(size + 1)))
 		return (NULL);
 	ret[size + 1] = '\0';
 	return (ret);
 }
-
