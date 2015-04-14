@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 14:33:27 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/14 22:44:48 by anonymous        ###   ########.fr       */
+/*   Updated: 2015/04/14 23:05:45 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,17 @@ int get_next_line(int const fd, char **line)
 	{
 		if (buf[0] != '\0') // si mon buf a stocké des caractère lu
 		{
-			ft_putstr("buf :");
-			ft_putendl(buf);
 			while (buf[i] && buf[i] != '\n')
 				i++;
 			if (buf[i] == '\n')
 			{
+
 				line = ft_strjoin(line, ft_strsub(buf, buf[0], i));
-				
+				ft_strsub(buf, i + 1, ft_strlen(buf) - 1);
 				return (1);
 			}
-		// je cherche sinon il y a un backslash /n dans mon buffer
-		// si il n'y en a pas je join ma line et mon buffer
-		// si j'ai un backslash /n j'ai un strsub sinon je fais un strjoin
-		// si j'ai trouvé un backslash /n j'ai lu une ligne je quite le programme
+			else
+				line = ft_strjoin(line, buf);
 		}
 		if ((ret = read(fd, buf, BUFF_SIZE)))
 			buf[BUFF_SIZE + 1] = '\0';
