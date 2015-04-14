@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/10 11:51:00 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/02/10 14:13:22 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/04/14 17:23:21 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int main()
 		}
 	}
 	ft_putendl("c'est fini :");
-	ft_putendl(line);
+	// ft_putendl(line);
 	return (0);
 }

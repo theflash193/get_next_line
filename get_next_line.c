@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 14:33:27 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/02/10 16:50:22 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/04/14 20:09:46 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,31 @@
 
 int get_next_line(int const fd, char **line)
 {
+	static char	buf[BUFF_SIZE + 1] = {0};
 	int		ret;
-	char	buf[BUFF_SIZE + 1];
-	static char	*res = "\0";
 	int		i;
+	(void)line;
 
-	ft_bzero(buf, BUFF_SIZE);
-	if (fd < 0 || !*line)
-		return (-1);
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	(void)i;
+	i = 0;
+	while (42) // tant que j'ai pas lu de ligne ou fini de lire dans le file descriptor 
 	{
-		buf[BUFF_SIZE] = '\0';
-		*line = ft_strjoin(res, buf);
-		*line = ft_strjoin(*line, buf);
-		if (ft_strcmp(buf, "\n"))
+		if (buf[0] != '\0') // si mon buf a stocké des caractère lu
 		{
-			i = ft_chr_index(buf, '\n');
-			*line = ft_strsub(buf, 0, i);
-			res = ft_strsub(buf, i, ft_strlen(buf) - (i + 1));
+			ft_putstr("buf :");
+			ft_putendl(buf);
+			exit(0);
+		
+		// je cherche sinon il y a un backslash /n dans mon buffer
+		// si il n'y en a pas je join ma line et mon buffer
+		// si j'ai un backslash /n j'ai un strsub sinon je fais un strjoin
+		// si j'ai trouvé un backslash /n j'ai lu une ligne je quite le programme
 		}
+		if ((ret = read(fd, buf, BUFF_SIZE)))
+			buf[BUFF_SIZE + 1] = '\0';
+		else if (ret < 0)
+			return (-1);
+		else
+			return (0);
 	}
-	if (ret > 0)
-		return (1);
-	if (ret == 0)
-		return (0);
-	return (0);
 }

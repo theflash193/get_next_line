@@ -30,9 +30,11 @@ RM = rm -rf
 
 all: libft $(NAME)
 
-libft:
-	make -C $(HEAD)
+# libft:
+# 	make -C $(HEAD)
 
+libft:
+	mingw32-make.exe -C $(HEAD)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(LIB) -o $(NAME)
 

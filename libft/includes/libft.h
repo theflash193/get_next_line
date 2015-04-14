@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 12:39:39 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/02/10 14:34:58 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/02/10 11:04:40 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,5 @@ void				ft_lst_push_back(t_list **alst, t_list *elem);
 *** function return is index if c is find or -1 if nothing is find
 */
 int					ft_chr_index(char const *s, int c);
-
-/*
-*** join n charactere of s1 and s2 to create no str
-*/
-char				*ft_strnjoin(char const *s1, char const *s2, size_t);
 
 #endif
