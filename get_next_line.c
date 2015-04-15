@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 14:33:27 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/15 12:58:45 by anonymous        ###   ########.fr       */
+/*   Updated: 2015/04/15 16:19:21 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,61 +32,24 @@ int get_next_line(int const fd, char **line)
 
 	ft_strclr(*line);
 	i = 0;
+	ret = 1;
 	if (fd < 0)
 		return (-1);
-	// ft_putendl("GET_NEXT_LINE :");
-	// ft_putstr("stats :");
-	// ft_putdata((void *)*line, "line", 1);
-	// ft_putdata((void *)buf, "buf", 1);
-	// sleep(2);
 	while (42) // tant que j'ai pas lu de ligne ou fini de lire dans le file descriptor 
 	{
-		// ft_putendl("debut de la boucle");
-		// ft_putstr("stats : ");
-		// ft_putdata((void *)*line, "line", 1);
-		// ft_putdata((void *)buf, "buf", 1);
-		// sleep(2);
-		if (buf[0] != '\0') // si mon buf a stocké des caractère lu
+		i = 0;
+		while (ret && buf[i]  != '\0' && buf[i] != '\n')
+			i++;
+		if (ret && buf[i] == '\n')
 		{
-			// ft_putdata(buf, "buf", 1);
-			i = 0;
-			while (buf[i] && buf[i] != '\n')
-				i++;
-			if (buf[i] == '\n')
-			{
-				*line = ft_strnjoin(*line, buf, i);
-				ft_memcpy(buf, buf + i + 1, BUFF_SIZE - i);
-				// ft_putendl("LIGNE DETECTER DANS LE BUFFER !");
-				// ft_putdata((void *)*line, "line", 1);
-				// ft_putdata(buf, "buf", 1);
-				// sleep(2);
-				// exit(0);
-				return (1);
-			}
-			else
-			{
-				*line = ft_strjoin(*line, buf);
-				// ft_putendl("PAS DE LIGNE DETECTER !");
-				// ft_putstr("stats : ");
-				// ft_putdata((void *)*line, "line", 1);
-				// ft_putdata((void *)buf, "buf", 1);
-				// sleep(2);
-			}
-			// ft_putdata(*line, "line", 1);
+			*line = ft_strnjoin(*line, buf, i);
+			ft_memcpy(buf, buf + i + 1, BUFF_SIZE - i);
+			return (1);
 		}
+		*line = ft_strjoin(*line, buf);
 		if ((ret = read(fd, buf, BUFF_SIZE)))
-		{
 			buf[BUFF_SIZE + 1] = '\0';
-			// ft_putendl("LECTURE DANS LE FILE DESCRIPTOR");
-			// ft_putdata((void *)buf, "buf", 1);
-			// sleep(1);
-		}
-		else if (ret < 0)
-			return (-1);
-		else
-		{
-			// ft_putendl("On a fini de lire dans le file descriptor");
-			return (0);
-		}
+		if (ret <= 0)
+			return (ret);
 	}
 }
