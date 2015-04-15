@@ -6,13 +6,13 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 14:28:07 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/14 23:04:16 by anonymous        ###   ########.fr       */
+/*   Updated: 2015/04/15 12:23:11 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE 
 # define GET_NEXT_LINE
-# define BUFF_SIZE 32
+# define BUFF_SIZE 2
 # include <sys/types.h>
 # include <unistd.h>
 # include <stdio.h>
