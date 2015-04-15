@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/04 14:28:07 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/15 19:59:37 by anonymous        ###   ########.fr       */
+/*   Created: 2015/04/15 19:48:59 by anonymous         #+#    #+#             */
+/*   Updated: 2015/04/15 19:49:58 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE 
-# define GET_NEXT_LINE
-# define BUFF_SIZE 32
-# include <sys/types.h>
-# include <unistd.h>
-# include <stdio.h>
+#include "libft.h"
+#include "get_next_line.h"
 
-typedef struct 	s_env
+char	*ft_strnjoin(char const *s1, char const *s2, size_t n)
 {
-	int			i;
-	int			ret;
-}				t_env;
+	char	*ret;
 
-int 			get_next_line(int const fd, char ** line);
-void			ft_putdata(void *data, char const *s, int mode);
-char			*ft_strnjoin(char const *s1, char const *s2, size_t n);
-
-#endif
+	if (!s1 || !s2 || !(ret = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
+		return (NULL);
+	ft_strcpy(ret, s1);
+	ft_strncat(ret, s2, n);
+	return (ret);
+}

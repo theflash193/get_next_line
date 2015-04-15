@@ -22,7 +22,7 @@ LIB = ./libft/libft.a
 
 FLAGS = -Wall -Werror -Wextra -g
 
-SRC = main.c get_next_line.c ft_putdata.c
+SRC = main.c get_next_line.c ft_putdata.c ft_strnjoin.c
 
 OBJ = $(SRC:.c=.o)
 
